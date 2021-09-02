@@ -1,0 +1,159 @@
+title: Sample Learning Lab
+description: >-
+    Course description: Place your course description here...
+template:
+    name: learninglab-template
+    repo: your-learninglab-template
+before:
+    - type: createIssue
+      title: It is Late!
+      body: its_late.md
+steps:
+    - title: 'It is Late!'
+      description: 'Task:'
+      event: workflow_run.completed
+      stepType: checks
+      branch: late
+      actions:
+        - type: respond
+          with: mergepr.md
+          files: ['n/a']
+          scripts: late.js
+    - title: Merge the PR
+      description: 'Tasks:'
+      event: pull_request.closed
+      stepType: PRmerge
+      actions:
+        - type: respond
+          with: hello.md
+          files: ['n/a']
+          scripts: n/a
+        - type: createIssue
+          title: 'Max Nums'
+          body: max_nums.md
+        - type: closeIssue
+    - title: 'Max Nums'
+      description: 'Task:'
+      event: workflow_run.completed
+      stepType: checks
+      branch: max
+      actions:
+        - type: respond
+          with: mergepr.md
+          files: ['n/a']
+          scripts: late.js
+    - title: Merge the PR
+      description: 'Tasks:'
+      event: pull_request.closed
+      stepType: PRmerge
+      actions:
+        - type: respond
+          with: hello.md
+          files: ['n/a']
+          scripts: n/a
+        - type: createIssue
+          title: 'Bubble Sort'
+          body: bubble_sort.md
+        - type: closeIssue
+    - title: 'Bubble Sort'
+      description: 'Task:'
+      event: workflow_run.completed
+      stepType: checks
+      branch: bubble
+      actions:
+        - type: respond
+          with: mergepr.md
+          files: ['n/a']
+          scripts: late.js
+    - title: Merge the PR
+      description: 'Tasks:'
+      event: pull_request.closed
+      stepType: PRmerge
+      actions:
+        - type: respond
+          with: hello.md
+          files: ['n/a']
+          scripts: n/a
+        - type: createIssue
+          title: 'Part 1: Sentence Analyzer - Letter Counter'
+          body: sent_1.md
+        - type: closeIssue
+    - title: 'Part 1: Sentence Analyzer - Letter Counter'
+      description: 'Task:'
+      event: workflow_run.completed
+      stepType: checks
+      branch: sentence
+      actions:
+        - type: respond
+          with: mergepr.md
+          files: ['n/a']
+          scripts: late.js
+    - title: Merge the PR
+      description: 'Tasks:'
+      event: pull_request.closed
+      stepType: PRmerge
+      actions:
+        - type: respond
+          with: hello.md
+          files: ['n/a']
+          scripts: n/a
+        - type: createIssue
+          title: 'Part 2: Sentence Analyzer - Word Counter'
+          body: sent_2.md
+        - type: closeIssue
+    - title: 'Part 2: Sentence Analyzer - Word Counter'
+      description: 'Task:'
+      event: workflow_run.completed
+      stepType: checks
+      branch: sentence
+      actions:
+        - type: respond
+          with: mergepr.md
+          files: ['n/a']
+          scripts: late.js
+    - title: Merge the PR
+      description: 'Tasks:'
+      event: pull_request.closed
+      stepType: PRmerge
+      actions:
+        - type: respond
+          with: hello.md
+          files: ['n/a']
+          scripts: n/a
+        - type: createIssue
+          title: 'Part 3: Sentence Analyzer - Specific Letter Counter'
+          body: sent_3.md
+        - type: closeIssue
+    - title: 'Part 3: Sentence Analyzer - Specific Letter Counter'
+      description: 'Task:'
+      event: workflow_run.completed
+      stepType: checks
+      branch: sentence
+      actions:
+        - type: respond
+          with: mergepr.md
+          files: ['n/a']
+          scripts: late.js
+    - title: Merge the PR
+      description: 'Tasks:'
+      event: pull_request.closed
+      stepType: PRmerge
+      actions:
+        - type: respond
+          with: hello.md
+          files: ['n/a']
+          scripts: n/a
+        - type: createIssue
+          title: 'Application Completed :)'
+          body: done.md
+        - type: closeIssue
+    - title: 'Application Completed :)'
+      description: 'Task:'
+      event: workflow_run.completed
+      stepType: checks
+      branch: sentence
+      actions:
+        - type: respond
+          with: mergepr.md
+          files: ['n/a']
+          scripts: late.js
