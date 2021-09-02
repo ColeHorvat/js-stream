@@ -1,5 +1,5 @@
-function running_late() {
-    let date = new Date();
+function running_late(currentDate) {
+    let date = new Date(currentDate);
     let time = date.getHours();
 
     if(time < 22)
