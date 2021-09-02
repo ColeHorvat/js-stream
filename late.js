@@ -2,7 +2,7 @@ function running_late() {
     let date = new Date();
     let time = date.getHours();
 
-    if(time < 18)
+    if(time < 22)
         return "It is still early!";
     else
         return "It is late!";
